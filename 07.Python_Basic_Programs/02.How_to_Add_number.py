@@ -67,3 +67,28 @@ print("The Division of {0} and {1} = {2}".format(num1, num2, div))
 print("The Modulus of {0} and {1} = {2}".format(num1, num2, mod))
 print("The Exponent Value of {0} and {1} = {2}".format(num1, num2, expo))
 
+================================== Basic calculater=========
+#!/bin/usr/python3
+
+x = input("Eter your first number: ")
+y = input("Enter your Second number: ")
+z = input("please insert any add,minus,multiply,divide? (+,-,x,+): ")
+
+y = int(y)
+x = int(x)
+
+if z != "":
+	if z == "+":
+		print("The sum of x and y",x + y)
+
+	if z == "-":
+		print("The substraction of x and y",x - y)
+
+	if z == "x":
+		print("The multiplication of x and y",x * y)
+
+	if z == "/":
+		print("The division of x and y",x / y)
+else:
+	print("use x,-,/,or + next time!")
+
