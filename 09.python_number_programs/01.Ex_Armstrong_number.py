@@ -203,3 +203,30 @@ for Number in range(Minimum, Maximum + 1):
            if Number == Sum:
                       print(Number)
 	
+#############################################################
+
+print("""
+*********************************************
+* Example 5 : Using minimum maximum            					 	
+*********************************************
+""")
+
+
+num = int(input("Please enter your value: "))
+
+order = len(str(num))
+
+sum = 0
+temp = num
+
+while temp > 0:
+	digit = temp % 10
+	sum += digit ** order
+	temp //= 10
+
+if num == sum:
+	print(num,"is an Armstrong number")
+else:
+	print(num,"is not an Armstrong number")
+
+	
