@@ -1,0 +1,39 @@
+from itertools import combinations
+comb = combinations([0,1,2,3,4,5,6,7,8,9],4)
+for i in comb:
+    print(i)
+=================================
+from itertools import combinations_with_replacement
+comb_with_replacement = combinations_with_replacement([0,1,2,3,4,5,6,7,8,9],4)
+for i in comb_with_replacement:
+    print(i)
+ =================================
+ from itertools import permutations
+perm = permutations([0,1,2,3,4,5,6,7,8,9],4)
+for i in perm:
+    print(i)
+ ================================================
+ from typing import Iterator, List
+
+def permutations_with_replacement(n: int, m: int) -> Iterator[List[int]]:
+    cur = [1]*n
+    hasNext = True
+    while hasNext:
+        yield cur
+        i = n-1
+        while hasNext:
+            cur[i] += 1
+            if cur[i] > m:
+                cur[i] = 1
+                i -= 1
+                if i < 0:
+                    hasNext = False
+            else:
+                break
+
+if __name__ == '__main__':
+    n = int(input("Please enter 'N': "))
+    m = int(input("Please enter 'M': "))
+
+    for i in permutations_with_replacement(n, m):
+        print(*i)
